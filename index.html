@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Economia</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <h1>Vamos lá</h1>
+  <div class="container">
+    <h1>Calculadora de Economia</h1>
+    <p>Descubra quanto você pode economizar por dia para atingir sua meta.</p>
+
+    <input type="number" id="valor" placeholder="Quanto você quer economizar? (R$)">
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

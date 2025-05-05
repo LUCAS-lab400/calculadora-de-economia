@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>POC - Calculadora</title>
+</head>
+<body>
+  <h2>Prova de Conceito</h2>
+  <input type="number" id="valor" placeholder="Quanto economizar?">
+  <button onclick="sugerir()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function sugerir() {
+      const v = parseFloat(document.getElementById('valor').value);
+      const res = document.getElementById('resultado');
+      res.textContent = v > 0 ? `Guarde R$${(v / 30).toFixed(2)} por dia.` : 'Valor inválido.';
+    }
+  </script>
+</body>
+</html>
+
