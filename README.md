@@ -30,7 +30,7 @@ git clone https://github.com/LUCAS-lab400/calculadora-de-economia.git
 
 3. Clique duas vezes em `index.html` para abrir no navegador e testar.
 
-Link do site para acessar ao site: https://lucas-lab400.github.io/calculadora-de-economia/>
+Link do site para acessar o projeto: https://lucas-lab400.github.io/calculadora-de-economia/>
 
 
 Este projeto é estático (HTML/CSS/JS) e **não exige servidor, banco de dados ou scripts adicionais**.
