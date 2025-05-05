@@ -14,7 +14,7 @@ Esta é a Prova de Conceito (PoC) do projeto "Calculadora de Economia".
 - O site simula sugestões de economia com base no valor.
 - Desenvolvido em HTML, CSS e JavaScript.
 
-A PoC está no arquivo `index.html`.
+A PoC está no arquivo `poc.html`.
 ***
 ## Como executar o projeto
 
