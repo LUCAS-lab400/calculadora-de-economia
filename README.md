@@ -1,6 +1,6 @@
 ## Integrantes do Projeto
 - Beatriz Cunha do Nascimento
-- Esdra Trindade de Lima Raiz
+- Esdras Trindade de Lima Raiz
 - Ismael Wagner de Araujo
 - Lucas Cipriano Costa
 
