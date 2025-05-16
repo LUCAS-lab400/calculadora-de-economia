@@ -75,3 +75,19 @@ function gerarResumo() {
 
     resumoMensal.innerHTML = resumoHTML;
 }
+
+function calcular() {
+  const valorInput = document.getElementById('valor');
+  const resultadoDiv = document.getElementById('resultado');
+
+  const valor = parseFloat(valorInput.value);
+
+  if (!isNaN(valor) && valor > 0) {
+    const dias = 30;
+    const porDia = valor / dias;
+
+    resultadoDiv.textContent = `Você precisa economizar R$ ${porDia.toFixed(2)} por dia durante 30 dias.`;
+  } else {
+    resultadoDiv.textContent = 'Por favor, insira um valor válido.';
+  }
+}
