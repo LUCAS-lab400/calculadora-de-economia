@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>POC - Calculadora</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POC - Calculadora</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Prova de Conceito</h2>
-  <input type="number" id="valor" placeholder="Quanto economizar?">
-  <button onclick="sugerir()">Calcular</button>
-  <p id="resultado"></p>
+    <div class="container">
+        <h2>Prova de Conceito</h2>
+        <p>Descubra quanto você pode economizar por dia.</p>
 
-  <script>
-    function sugerir() {
-      const v = parseFloat(document.getElementById('valor').value);
-      const res = document.getElementById('resultado');
-      res.textContent = v > 0 ? `Guarde R$${(v / 30).toFixed(2)} por dia.` : 'Valor inválido.';
-    }
-  </script>
+        <input type="number" id="valor" placeholder="Quanto deseja economizar? (R$)">
+        <button id="calcularBtn">Calcular</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
 

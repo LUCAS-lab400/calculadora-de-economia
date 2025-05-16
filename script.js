@@ -18,21 +18,26 @@ document.getElementById('definirMetaBtn').addEventListener('click', definirMeta)
 document.getElementById('registrarGastoBtn').addEventListener('click', registrarGasto);
 document.getElementById('gerarResumoBtn').addEventListener('click', gerarResumo);
 
-// Definir meta de economia
+// Função para definir a meta de economia
 function definirMeta() {
     metaEconomia = parseFloat(metaInput.value);
+    if (isNaN(metaEconomia) || metaEconomia <= 0) {
+        mensagemAlerta.textContent = "Insira uma meta válida.";
+        return;
+    }
+
     metaDisplay.textContent = metaEconomia.toFixed(2);
     atualizarLimite();
     metaInput.value = '';
     mensagemAlerta.textContent = "Meta definida! Vamos economizar!";
 }
 
-// Registrar gastos
+// Função para registrar gastos
 function registrarGasto() {
     const valor = parseFloat(gastoInput.value);
     const descricao = descricaoInput.value;
 
-    if (valor && !isNaN(valor)) {
+    if (!isNaN(valor) && valor > 0) {
         totalGastos += valor;
         gastosRegistrados.push({ valor, descricao });
         gastosDisplay.textContent = totalGastos.toFixed(2);
@@ -42,21 +47,21 @@ function registrarGasto() {
     }
 }
 
-// Atualizar limite restante
+// Atualiza o limite restante com base na meta e nos gastos
 function atualizarLimite() {
     const limite = metaEconomia - totalGastos;
     limiteDisplay.textContent = limite.toFixed(2);
 
     if (limite < 0) {
         mensagemAlerta.textContent = "Atenção! Você ultrapassou seu limite! Corte gastos.";
-    } else if (limite < (metaEconomia * 0.3)) {
+    } else if (limite < metaEconomia * 0.3) {
         mensagemAlerta.textContent = "Cuidado! Você está perto do limite.";
     } else {
         mensagemAlerta.textContent = "Tudo sob controle! Continue assim.";
     }
 }
 
-// Gerar resumo mensal
+// Gera o resumo mensal com todos os dados
 function gerarResumo() {
     const economia = metaEconomia - totalGastos;
     let resumoHTML = `
@@ -67,15 +72,17 @@ function gerarResumo() {
     `;
 
     if (gastosRegistrados.length > 0) {
-        resumoHTML += <><h3>Detalhe dos Gastos:</h3><ul>;
-            gastosRegistrados.forEach(gasto = {resumoHTML += <li>${gasto.descricao || 'Sem descrição'}: R$ ${gasto.valor.toFixed(2)}</li>};
-            );
-            resumoHTML += </ul></>;
+        resumoHTML += `<h3>Detalhe dos Gastos:</h3><ul>`;
+        gastosRegistrados.forEach(gasto => {
+            resumoHTML += `<li>${gasto.descricao || 'Sem descrição'}: R$ ${gasto.valor.toFixed(2)}</li>`;
+        });
+        resumoHTML += `</ul>`;
     }
 
-    resumoMensal.innerHTML = resumoHTML;
+    resumoMensal.innerHTML = resumoHTML;
 }
 
+// Calcula quanto economizar por dia
 function calcular() {
   const valorInput = document.getElementById('valor');
   const resultadoDiv = document.getElementById('resultado');
@@ -85,7 +92,6 @@ function calcular() {
   if (!isNaN(valor) && valor > 0) {
     const dias = 30;
     const porDia = valor / dias;
-
     resultadoDiv.textContent = `Você precisa economizar R$ ${porDia.toFixed(2)} por dia durante 30 dias.`;
   } else {
     resultadoDiv.textContent = 'Por favor, insira um valor válido.';

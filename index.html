@@ -13,10 +13,27 @@
 
     <input type="number" id="valor" placeholder="Quanto você quer economizar? (R$)">
     <button onclick="calcular()">Calcular</button>
-
     <div id="resultado"></div>
+
+    <hr>
+
+    <input type="number" id="metaInput" placeholder="Defina sua meta (R$)">
+    <button id="definirMetaBtn">Definir Meta</button>
+    <p>Meta atual: R$ <span id="metaDisplay">0.00</span></p>
+
+    <input type="number" id="gastoInput" placeholder="Valor do gasto (R$)">
+    <input type="text" id="descricaoInput" placeholder="Descrição do gasto">
+    <button id="registrarGastoBtn">Registrar Gasto</button>
+
+    <p>Total de gastos: R$ <span id="gastosDisplay">0.00</span></p>
+    <p>Limite restante: R$ <span id="limiteDisplay">0.00</span></p>
+    <p id="mensagemAlerta"></p>
+
+    <button id="gerarResumoBtn">Gerar Resumo Mensal</button>
+    <div id="resumoMensal"></div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Importa o JS somente depois que o HTML estiver carregado -->
+  <script src="script.js" defer></script>
 </body>
 </html>
