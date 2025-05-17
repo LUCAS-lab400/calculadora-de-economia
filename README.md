@@ -24,11 +24,14 @@ A PoC está no arquivo `poc.html`.
 ## Como executar o projeto
 
 1. Baixe ou clone o repositório:
+
+```bash
 git clone https://github.com/LUCAS-lab400/calculadora-de-economia.git
 
-2. Abra a pasta no VS Code ou outro editor.
 
-3. Clique duas vezes em `index.html` para abrir no navegador e testar.
+Abra a pasta no VS Code (ou outro editor).
+
+Dê dois cliques em index.html para abrir no navegador.
 
 ***
 Este projeto ajuda você a calcular quanto precisa economizar por dia para atingir uma meta mensal.
